@@ -1,0 +1,172 @@
+<mat-card class="mat-elevation-z4" fxFlexAlign="stretch">
+    <mat-card-header>
+      <mat-card-title>{{titulo}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <button class="btn btn-primary my-2"
+                routerLink="/empresas">
+            Regresar
+        </button>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="nit">NIT</label>
+                <input class="form-control" type="text" name="nit" 
+                id="nit" [(ngModel)]="empresa.nit">
+                <div class="alert alert-danger" *ngIf="error && error.nit">
+                    {{error.nit}}
+                </div>  
+            </div>
+            <div class="form-group">
+                <label for="razon_social">Razon Social</label>
+                <input class="form-control" type="text" name="razon_social" 
+                id="razon_social" [(ngModel)]="empresa.razon_social">
+                <div class="alert alert-danger" *ngIf="error && error.razon_social">
+                    {{error.razon_social}}
+                </div>  
+            </div>
+            <!-- <div class="form-group">
+                <label for="fecha_fund">Fecha de fundación</label>
+                <input class="form-control" type="date"
+                name="fecha_fund" id="fecha_fund" max="{{this.date | date:'yyyy-MM-dd'}}" [(ngModel)]="empresa.fecha_fund">
+                <div class="alert alert-danger" *ngIf="error && error.fecha_fund">
+                    {{error.fecha_fund}}
+                </div> 
+            </div> -->
+            <div class="form-group">
+                <label for="tel_fijo">Teléfono</label>
+                <input class="form-control" type="number"
+                name="tel_fijo" id="tel_fijo" [(ngModel)]="empresa.tel_fijo">
+                <div class="alert alert-danger" *ngIf="error && error.tel_fijo">
+                    {{error.tel_fijo}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="nom_duenio">Nombre dueño</label>
+                <input class="form-control" type="text"
+                name="nom_duenio" id="nom_duenio" [(ngModel)]="empresa.nom_duenio">
+                <div class="alert alert-danger" *ngIf="error && error.nom_duenio">
+                    {{error.nom_duenio}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="ape_duenio">Apellido dueño</label>
+                <input class="form-control" type="text"
+                name="ape_duenio" id="ape_duenio" [(ngModel)]="empresa.ape_duenio">
+                <div class="alert alert-danger" *ngIf="error && error.ape_duenio">
+                    {{error.ape_duenio}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="tipo_id_duenio">Tipo id dueño</label>
+                <select name="tipo_id_duenio" id="tipo_id_duenio" [(ngModel)]="empresa.tipo_id_duenio">
+                    <option *ngFor="let t of tiposID" [ngValue]="t">{{t.nom_tipo}}</option>
+                </select>
+                <div class="alert alert-danger" *ngIf="error && error.tipo_id_duenio">
+                    {{error.tipo_id_duenio}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="num_id_duenio">Num id dueño</label>
+                <input class="form-control" type="number"
+                name="num_id_duenio" id="num_id_duenio" [(ngModel)]="empresa.num_id_duenio">
+                <div class="alert alert-danger" *ngIf="error && error.num_id_duenio">
+                    {{error.num_id_duenio}}
+                </div> 
+            </div>
+            <!-- <div class="form-group">
+                <label for="fecha_nac_duenio">Fecha nacimiento dueño</label>
+                <input class="form-control" type="date"
+                name="fecha_nac_duenio" id="fecha_nac_duenio" max="{{this.date | date:'yyyy-MM-dd'}}" [(ngModel)]="empresa.fecha_nac_duenio">
+                <div class="alert alert-danger" *ngIf="error && error.fecha_nac_duenio">
+                    {{error.fecha_nac_duenio}}
+                </div> 
+            </div> -->
+            <div class="form-group">
+                <label for="tel_duenio">Teléfono dueño</label>
+                <input class="form-control" type="number"
+                name="tel_duenio" id="tel_duenio" [(ngModel)]="empresa.tel_duenio">
+                <div class="alert alert-danger" *ngIf="error && error.tel_duenio">
+                    {{error.tel_duenio}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="nom_rep">Nombre representante</label>
+                <input class="form-control" type="text"
+                name="nom_rep" id="nom_rep" [(ngModel)]="empresa.nom_rep">
+                <div class="alert alert-danger" *ngIf="error && error.nom_rep">
+                    {{error.nom_rep}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="ape_rep">Apellido representante</label>
+                <input class="form-control" type="text"
+                name="ape_rep" id="ape_rep" [(ngModel)]="empresa.ape_rep">
+                <div class="alert alert-danger" *ngIf="error && error.ape_rep">
+                    {{error.ape_rep}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="tipo_id_rep">Tipo id representante</label>
+                <select name="tipo_id_rep" id="tipo_id_rep" [(ngModel)]="empresa.tipo_id_rep">
+                    <option *ngFor="let t of tiposID" [ngValue]="t">{{t.nom_tipo}}</option>
+                </select>
+                <div class="alert alert-danger" *ngIf="error && error.tipo_id_rep">
+                    {{error.tipo_id_duenio}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="num_id_rep">Num id representante</label>
+                <input class="form-control" type="number"
+                name="num_id_rep" id="num_id_rep" [(ngModel)]="empresa.num_id_rep">
+                <div class="alert alert-danger" *ngIf="error && error.num_id_rep">
+                    {{error.num_id_rep}}
+                </div> 
+            </div>
+            <!-- <div class="form-group">
+                <label for="fecha_nac_rep">Fecha nacimiento representante</label>
+                <input class="form-control" type="date"
+                name="fecha_nac_rep" id="fecha_nac_rep" placeholder="yyyy-mm-dd" max="{{this.date | date:'yyyy-MM-dd'}}" [(ngModel)]="empresa.fecha_nac_rep">
+                <div class="alert alert-danger" *ngIf="error && error.fecha_nac_rep">
+                    {{error.fecha_nac_rep}}
+                </div> 
+            </div> -->
+            <div class="form-group">
+                <label for="tel_rep">Teléfono representante</label>
+                <input class="form-control" type="number"
+                name="tel_rep" id="tel_rep" [(ngModel)]="empresa.tel_rep">
+                <div class="alert alert-danger" *ngIf="error && error.tel_rep">
+                    {{error.tel_rep}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input class="form-control" type="email"
+                name="correo" id="correo" [(ngModel)]="empresa.usuario.correo">
+                <div class="alert alert-danger" *ngIf="error && error.correo">
+                    {{error.correo}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input class="form-control" type="password"
+                name="contrasena" id="contrasena" [(ngModel)]="empresa.usuario.contrasena">
+                <div class="alert alert-danger" *ngIf="error && error.contrasena">
+                    {{error.contrasena}}
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="conf_contrasena">Confirmar contraseña</label>
+                <input class="form-control" type="password"
+                name="conf_contrasena" id="conf_contrasena" [(ngModel)]="conf_contrasena">
+            </div>
+            <div class="alert alert-danger" *ngIf="empresa.usuario.contrasena !== conf_contrasena">
+                Las contraseñas no coinciden
+            </div> 
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="empresa.id?modificar():crear()">{{empresa.id?'Modificar empresa':'Crear empresa'}}</button>
+            </div>
+        </form>
+    </mat-card-content>
+ </mat-card>
+

@@ -1,0 +1,53 @@
+<mat-card id="tabla-ofertas" style="width: 160vh; justify-content: center;">
+    <mat-card-header>
+      <mat-card-title>{{titulo}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button class="btn btn-primary my-2"
+      routerLink="/profesores">
+        Regresar
+      </button>
+      <div class="table-responsive">
+        <table class="table table-hover table-striper">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Curso</th>
+              <th scope="col">Profesor</th>
+              <th scope="col">Cupos</th>
+              <th scope="col">Fecha inicio</th>
+              <th scope="col">Fecha finalización</th>
+              <th scope="col">Detalles curso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let oferta of lista">
+                <td>{{oferta.id}}</td>
+                <td>{{oferta.curso.nombre}}</td>
+                <td>{{oferta.profesor.nombre}} {{oferta.profesor.apellido}}</td>
+                <td>{{oferta.cupos}}</td>
+                <td>{{oferta.fecha_inicio}}</td>
+                <td>{{oferta.fecha_fin}}</td>
+                <td>
+                  <button class="btn btn-success btn.secondary btn.sm" [routerLink]="[this.ruta_actual, 'curso', oferta.curso.id]">
+                      Ver detalles
+                  </button>
+                </td>
+                <!-- <td>
+                  <button class="btn btn-success btn.secondary btn.sm" [routerLink]="[' ', oferta.curso.id]">
+                      Ver empleados
+                  </button>
+                </td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <mat-paginator [length]="totalRegistros"
+            [pageSize]="totalPorPagina"
+            [pageSizeOptions]="pageSizeOptions"
+            [pageIndex]="paginaActual"
+            (page) = "paginar($event)"
+            showFirstLastButtons class="float.left mx-2">
+        </mat-paginator>
+    </mat-card-content>
+  </mat-card>  

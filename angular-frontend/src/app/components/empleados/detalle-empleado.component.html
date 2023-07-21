@@ -1,0 +1,43 @@
+<mat-card class="mat-elevation-z4" id="tabla-detalle-empleado" fxFlexAlign="stretch" style="width: 160vh;">
+    <mat-card-header>
+      <mat-card-title>{{titulo}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <button class="btn btn-primary my-2"
+              routerLink="/empleados">
+          Regresar
+        </button>
+    <div class="table-responsive">
+      <table class="table table-hover table-striper">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Tipo identificación</th>
+            <th scope="col">Número identificación</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Localidad</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>{{empleado.id}}</td>
+              <td>{{empleado.usuario.id}}</td>
+              <td>{{empleado.nombre}}</td>
+              <td>{{empleado.apellido}}</td>
+              <td>{{empleado.tipo_id.nom_tipo}}</td>
+              <td>{{empleado.num_id}}</td>
+              <td>{{empleado.ciudad}}</td>
+              <td>{{empleado.localidad}}</td>
+              <td>{{empleado.direccion}}</td>
+              <td>{{empleado.telefono}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </mat-card-content>
+  </mat-card>

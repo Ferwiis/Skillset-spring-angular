@@ -1,0 +1,29 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+mat-card{
+    position: relative;
+    top: 35vh;
+    width: 80vh;
+    height: 100%;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-group{
+    padding-bottom: 7px;
+    margin-bottom: 0.1em;
+}
+
+label{
+    margin-right: 20px;
+}

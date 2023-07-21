@@ -1,0 +1,53 @@
+<mat-card class="mat-elevation-z4" id="tabla-detalle-empresa" fxFlexAlign="stretch" style="width: 160vh;">
+    <mat-card-header>
+      <mat-card-title>{{titulo}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button class="btn btn-primary my-2"
+      routerLink="/empresas">
+        Regresar
+      </button>
+      <div class="table-responsive">
+        <table class="table table-hover table-striper">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">NIT</th>
+              <th scope="col">Razon Social</th>
+              <th scope="col">Teléfono fijo</th>
+              <th scope="col">Nom dueño</th>
+              <th scope="col">Ape dueño</th>
+              <th scope="col">Tipo id dueño</th>
+              <th scope="col">Núm id dueño</th>
+              <th scope="col">Tel dueño</th>
+              <th scope="col">Nom representante</th>
+              <th scope="col">Ape representante</th>
+              <th scope="col">Tipo id representante</th>
+              <th scope="col">Núm id representante</th>
+              <th scope="col">Tel representante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{empresa.id}}</td>
+              <td>{{empresa.usuario.id}}</td>
+              <td>{{empresa.nit}}</td>
+              <td>{{empresa.razon_social}}</td>
+              <td>{{empresa.tel_fijo}}</td>
+              <td>{{empresa.nom_duenio}}</td>
+              <td>{{empresa.ape_duenio}}</td>
+              <td>{{empresa.tipo_id_duenio.nom_tipo}}</td>
+              <td>{{empresa.num_id_duenio}}</td>
+              <td>{{empresa.tel_duenio}}</td>
+              <td>{{empresa.nom_rep}}</td>
+              <td>{{empresa.ape_rep}}</td>
+              <td>{{empresa.tipo_id_rep.nom_tipo}}</td>
+              <td>{{empresa.num_id_rep}}</td>
+              <td>{{empresa.tel_rep}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>

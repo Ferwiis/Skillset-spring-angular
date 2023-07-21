@@ -1,0 +1,11 @@
+#tabla-clientes{
+    height: 70vh;
+}
+
+.table{
+    height: 40vh;
+}
+
+mat-paginator{
+    height: 0;
+}

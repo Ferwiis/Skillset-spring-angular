@@ -1,0 +1,61 @@
+<mat-toolbar>
+  Barra de titulo
+</mat-toolbar>
+<mat-sidenav-container>
+      <mat-sidenav class="mat-elevation-z8" mode="side" opened>
+        <img src="assets/skillset-logo-simplificado.png" width="150" height="140"/>
+        <mat-divider></mat-divider>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="" routerLinkActive="active-home" [routerLinkActiveOptions]="{exact:
+          true}">
+          <mat-icon>home</mat-icon>
+          <span>Inicio</span>
+        </button>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="/usuarios" routerLinkActive="active">
+          <mat-icon>person</mat-icon>
+          <span>Usuarios</span>
+        </button>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="/empresas" routerLinkActive="active">
+          <mat-icon>store</mat-icon>
+          <span>Empresas</span>
+        </button>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="/empleados" routerLinkActive="active">
+          <mat-icon><span class="material-icons-outlined">
+            school
+            </span></mat-icon>
+          <span>Empleados</span>
+        </button>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="/profesores" routerLinkActive="active">
+          <mat-icon>work</mat-icon>
+          <span>Profesores</span>
+        </button>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="/cursos" routerLinkActive="active">
+          <mat-icon>collections_bookmark</mat-icon>
+          <span>Cursos</span>
+        </button>
+        <button class="menu-button" mat-button aria-current="page" href="" routerLink="/ofertas" routerLinkActive="active">
+          <mat-icon>calendar_today</mat-icon>
+          <span>Ofertas</span>
+        </button>
+    <mat-divider></mat-divider>
+    </mat-sidenav>
+      <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<!-- <ng-template *ngIf="3; else elseBlock">
+    <app-navbar></app-navbar>
+    <div class="content-section">
+        <app-clientes></app-clientes>
+    </div>
+    <router-outlet></router-outlet>
+</ng-template>
+<ng-template #elseBlock>
+    <div class="inicio">
+
+    </div>
+</ng-template> -->

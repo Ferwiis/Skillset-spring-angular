@@ -1,0 +1,59 @@
+<mat-card id="tabla-cursos" style="width: 160vh; justify-content: center;">
+    <mat-card-header>
+      <mat-card-title>{{titulo}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button class="btn btn-primary my-2"
+              routerLink="/cursos/form">
+          Crear curso
+      </button>
+      <div class="table-responsive">
+        <table class="table table-hover table-striper">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Tipo curso</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Objetivo</th>
+              <th scope="col">Contenidos</th>
+              <th scope="col">Sesiones semanales</th>
+              <th scope="col">Sesiones del curso</th>
+              <th scope="col">Horas sesión</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Detalles</th>
+              <th scope="col">Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let curso of lista">
+                <td>{{curso.id}}</td>
+                <td>{{curso.tipo_curso.nom_tipo}}</td>
+                <td>{{curso.nombre}}</td>
+                <td>{{curso.objetivo}}</td>
+                <td>{{curso.contenidos}}</td>
+                <td>{{curso.sesiones_semanales}}</td>
+                <td>{{curso.sesiones_curso}}</td>
+                <td>{{curso.precio}}</td>
+                <td>
+                  <button class="btn btn-success btn.secondary btn.sm" [routerLink]="['/cursos/detalle', curso.id]">
+                      Ver detalles
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-primary btn.secondary btn.sm" [routerLink]="['/cursos/form', curso.id]">
+                      Editar
+                  </button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <mat-paginator [length]="totalRegistros"
+            [pageSize]="totalPorPagina"
+            [pageSizeOptions]="pageSizeOptions"
+            [pageIndex]="paginaActual"
+            (page) = "paginar($event)"
+            showFirstLastButtons class="float.left mx-2">
+        </mat-paginator>
+    </mat-card-content>
+  </mat-card>
